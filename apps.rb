@@ -30,6 +30,10 @@ dep "Flux.app" do
   source "http://justgetflux.com/mac/Flux.zip"
 end
 
-dep "Vlc.app" do
+dep "VLC.app" do
   source "http://get.videolan.org/vlc/2.0.8/macosx/vlc-2.0.8-intel64.dmg"
+end
+
+dep "Doxie.app" do
+  source "http://cdn.getdoxie.com/resources/files/Doxie.dmg"
 end

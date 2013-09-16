@@ -62,12 +62,12 @@ dep "vundle install" do
   }
 end
 
-dep "symlink code" do
+dep "code directory" do
   met? {
-    "~/Code".p.exists?
+    "~/code".p.exists?
   }
-
+  
   meet {
-    log_shell "Symlinking ~/Code to ~/Dropbox/Code", "ln -s ~/Dropbox/Code ~/Code"
+    shell "mkdir code"
   }
 end

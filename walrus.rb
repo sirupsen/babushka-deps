@@ -6,7 +6,9 @@ dep "setup" do
     "Evernote.app",
     "Transmission.app",
     "Spotify.app",
-    "Flux.app"
+    "Flux.app",
+    "VLC.app",
+    "Doxie.app"
 
   # App config
   requires "symlink skype logs"
@@ -16,7 +18,7 @@ dep "setup" do
     "bash_profile",
     "ssh",
     "vundle install",
-    "symlink code"
+    "code directory"
 
   # OS X
   requires "remove dashboard",

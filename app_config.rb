@@ -22,6 +22,19 @@ dep "symlink skype logs" do
 #   }
 end
 
+dep "Dropbox.dir" do
+  requires "Dropbox.app"
+
+  met? {
+    "~/Dropbox".p.exists?
+  }
+
+  meet {
+    shell 'cp /Volumes/Install\ OS\ X\ Mavericks/Dropbox.zip ~/'
+    shell 'unzip -f Dropbox.zip'
+  }
+end
+
 dep "manual dir" do
   def path
     "~/.babushka/manual".p

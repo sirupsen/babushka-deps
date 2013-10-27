@@ -14,9 +14,9 @@ dep 'Skype.app' do
   source 'http://www.skype.com/go/getskype-macosx.dmg'
 end
 
-dep 'Evernote.app' do
-  source 'http://evernote.com/download/get.php?file=EvernoteMac'
-end
+#dep 'Evernote.app' do
+#  source 'http://evernote.com/download/get.php?file=EvernoteMac'
+#end
 
 dep 'Transmission.app' do
   source 'http://download.transmissionbt.com/files/Transmission-2.13.dmg'

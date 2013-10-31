@@ -1,30 +1,32 @@
-dep "remove dashboard" do
-  meet {
-    shell "defaults write com.apple.dashboard mcx-disabled -boolean YES"
+meta :osx do
+  accepts_value_for :setting
+  accepts_value_for :type
+  accepts_value_for :value
+
+  template do
+    met? {
+      status = `defaults read #{setting}`.strip
+      status == value
+    }
+    
+    meet {
+      shell "defaults write #{setting} -#{type} #{value}"
+    }
+  end
+end
+
+dep "dashboard.osx" do
+  setting "com.apple.dashboard mcx-disabled"
+  type "bool"
+  value "1"
+
+  after {
     shell "killall Dock"
   }
 end
 
-dep "current dir finder scope" do
-  meet {
-    'defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"'
-  }
-end
-
-dep "disable confirm application dialog" do
-  meet {
-    shell "defaults write com.apple.LaunchServices LSQuarantine -bool false"
-  }
-end
-
-dep "tap to click" do
-  meet {
-    shell "defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true"
-  }
-end
-
-dep "disable notification center" do
-  meet {
-    shell "lunchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
-  }
+dep "current dir finder scope.osx" do
+  setting "com.apple.finder FXDefaultSearchScope"
+  type "string"
+  value "SCcf"
 end

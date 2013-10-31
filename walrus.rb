@@ -2,13 +2,12 @@ dep "setup" do
   requires "iTerm.app", 
     "Dropbox.app",
     "Skype.app",
-    #"Evernote.app",
+    "Evernote.app",
     "Transmission.app",
     "Spotify.app",
     "Flux.app",
     "VLC.app",
     "Doxie.app"
-    #"Google Chrome.app",
 
   # App config
   # requires "symlink skype logs"
@@ -20,28 +19,28 @@ dep "setup" do
     "vundle install",
     "code directory",
     "Solarized.terminal",
-    "Vagrant.installer"
+    "Vagrant.installer",
+    "command-t"
 
   # Homebrew
   requires "wget.managed",
     "chruby.managed",
     "ruby-install.managed",
     "go.managed",
-    "git.managed"
+    "git.managed",
+    "vim.managed",
+    "the_silver_searcher.managed",
+    "tmux.managed",
+    "reattach-to-user-namespace.managed",
+    "hub.managed"
 
   # Rubies
   requires "1.9.3.ruby",
-    "stable.ruby"
+    "2.0.0.ruby"
 
   # OS X
-  requires "remove dashboard",
-    "current dir finder scope",
-    "disable confirm application dialog",
-    "tap to click",
-    "disable notification center"
-
-  # Manual
-  # requires "iTerm colors"
+  requires "dashboard.osx",
+    "current dir finder scope.osx"
 
   # Fonts
   requires "Inconsolata.otf"

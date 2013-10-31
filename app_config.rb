@@ -30,6 +30,7 @@ dep "Dropbox.dir" do
   }
 
   meet {
+    log "Copying Dropbox from USB.."
     shell 'cp /Volumes/Install\ OS\ X\ Mavericks/Dropbox.zip ~/'
     shell 'unzip -f Dropbox.zip'
   }
@@ -49,18 +50,3 @@ dep "manual dir" do
   }
 end
 
-dep "iTerm colors" do
-  requires "iTerm.app", "manual dir"
-
-  def endpoint
-    "~/.babushka/manual/Solarized_Dark.itermcolors"
-  end
-
-  met? {
-    endpoint.p.exists?
-  }
-
-  meet {
-    shell "curl https://raw.github.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors > #{endpoint}"
-  }
-end

@@ -1,4 +1,9 @@
 dep "homesick.gem" do
+  # Override because we want to be able to re-run on a new ruby managed by
+  # something else without installing homesick again
+  met? {
+    "~/.homesick".p.exists?
+  }
 end
 
 dep "homesick" do
@@ -105,4 +110,21 @@ end
 
 dep "Vagrant.installer" do
   source "http://files.vagrantup.com/packages/a40522f5fabccb9ddabad03d836e120ff5d14093/Vagrant-1.3.5.dmg"
+end
+
+dep "command-t" do
+  requires "vim.managed", "chruby.managed", "vundle install"
+
+  def path
+    "~/.vim/bundle/Command-T/ruby/command-t"
+  end
+
+  met? {
+    (path + "/match.o").p.exists?
+  }
+
+  meet {
+    log "Compiling command-t.."
+    shell "cd #{path} && ruby extconf.rb && make clean && make"
+  }
 end

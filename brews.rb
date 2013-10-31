@@ -36,3 +36,10 @@ end
 dep "hub.managed" do
   requires "git.managed"
 end
+
+dep "openssl.managed" do
+end
+
+dep "mercurial.managed" do
+  provides "hg"
+end

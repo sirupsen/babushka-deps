@@ -37,7 +37,7 @@ dep "ssh" do
   }
 
   meet {
-    shell "cp -r ~/Dropbox/Backups/ssh ~/.ssh"
+    shell "ln -s ~/Dropbox/Backups/ssh ~/.ssh"
   }
 end
 

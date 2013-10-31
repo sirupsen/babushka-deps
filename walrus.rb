@@ -32,7 +32,9 @@ dep "setup" do
     "the_silver_searcher.managed",
     "tmux.managed",
     "reattach-to-user-namespace.managed",
-    "hub.managed"
+    "hub.managed",
+    "openssl.managed",
+    "mercurial.managed"
 
   # Rubies
   requires "1.9.3.ruby",

@@ -46,6 +46,12 @@ dep "setup" do
   requires "dashboard.osx",
     "current dir finder scope.osx"
 
+  # Safari extensions
+  requires "pocket.extension",
+    "evernote.extension",
+    "adblock.extension"
+
+
   # Fonts
   requires "Inconsolata.otf"
 end

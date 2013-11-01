@@ -50,3 +50,12 @@ end
 
 dep "node.managed" do
 end
+
+dep "ctags.managed" do
+end
+
+dep "z.managed" do
+  met? {
+    "/usr/local/Cellar/z".p.exists?
+  }
+end

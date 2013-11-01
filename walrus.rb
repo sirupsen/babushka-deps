@@ -36,7 +36,9 @@ dep "setup" do
     "openssl.managed",
     "mercurial.managed",
     "bazaar.managed",
-    "node.managed"
+    "node.managed",
+    "ctags.managed",
+    "z.managed"
 
   # Rubies
   requires "1.9.3.ruby",
@@ -50,7 +52,6 @@ dep "setup" do
   requires "pocket.extension",
     "evernote.extension",
     "adblock.extension"
-
 
   # Fonts
   requires "Inconsolata.otf"

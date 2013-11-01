@@ -39,7 +39,7 @@ dep "setup" do
     "sqlite.managed",
     "gdb.managed",
     "scala.managed",
-    "clojure.managed"
+    "leiningen.managed"
 
   # Rubies
   requires "1.9.3.ruby",

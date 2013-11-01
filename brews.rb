@@ -75,6 +75,6 @@ end
 dep "scala.managed" do
 end
 
-dep "clojure.managed" do
-  provides "clj"
+dep "leiningen.managed" do
+  provides "lein"
 end

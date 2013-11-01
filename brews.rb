@@ -59,3 +59,7 @@ dep "z.managed" do
     "/usr/local/Cellar/z".p.exists?
   }
 end
+
+dep "sqlite.managed" do
+  provides "sqlite3"
+end

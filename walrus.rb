@@ -38,7 +38,8 @@ dep "setup" do
     "bazaar.managed",
     "node.managed",
     "ctags.managed",
-    "z.managed"
+    "z.managed",
+    "sqlite.managed"
 
   # Rubies
   requires "1.9.3.ruby",

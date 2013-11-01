@@ -1,3 +1,15 @@
+dep "core development" do
+  requires "git.managed", 
+    "vim.managed",
+    "the_silver_searcher.managed",
+    "tmux.managed",
+    "hub.managed"
+
+  requires "homesick",
+    "vundle install",
+    "command-t"
+end
+
 dep "homesick.gem" do
   # Override because we want to be able to re-run on a new ruby managed by
   # something else without installing homesick again
@@ -28,7 +40,6 @@ dep "bash_profile" do
   }
 end
 
-
 dep "ssh" do
   requires "Dropbox.dir"
 
@@ -41,18 +52,7 @@ dep "ssh" do
   }
 end
 
-dep "git" do
-  met? {
-    false
-  }
-
-  meet {
-    shell 'git config --global user.name "Simon Eskildsen"'
-    shell 'git config --global user.email "sirup@sirupsen.com"'
-  }
-end
-
-dep "vundle install" do
+dep "vundle" do
   met? {
     "~/.vim/bundle/vundle/README.md".p.exists?
   }
@@ -113,7 +113,8 @@ dep "Vagrant.installer" do
 end
 
 dep "command-t" do
-  requires "vim.managed", "chruby.managed", "vundle install"
+  requires "vim.managed", 
+    "vundle"
 
   def path
     "~/.vim/bundle/Command-T/ruby/command-t"

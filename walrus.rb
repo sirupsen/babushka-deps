@@ -16,7 +16,7 @@ dep "setup" do
   requires "homesick", 
     "bash_profile",
     "ssh",
-    "vundle install",
+    "vundle",
     "code directory",
     "Solarized.terminal",
     "Vagrant.installer",
@@ -34,7 +34,9 @@ dep "setup" do
     "reattach-to-user-namespace.managed",
     "hub.managed",
     "openssl.managed",
-    "mercurial.managed"
+    "mercurial.managed",
+    "bazaar.managed",
+    "node.managed"
 
   # Rubies
   requires "1.9.3.ruby",

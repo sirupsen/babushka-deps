@@ -43,3 +43,10 @@ end
 dep "mercurial.managed" do
   provides "hg"
 end
+
+dep "bazaar.managed" do
+  provides "bzr"
+end
+
+dep "node.managed" do
+end

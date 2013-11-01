@@ -78,3 +78,6 @@ end
 dep "leiningen.managed" do
   provides "lein"
 end
+
+dep "axel.managed" do
+end

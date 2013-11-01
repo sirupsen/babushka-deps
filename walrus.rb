@@ -9,9 +9,6 @@ dep "setup" do
     "VLC.app",
     "Doxie.app"
 
-  # App config
-  # requires "symlink skype logs"
-
   # Dev
   requires "homesick", 
     "bash_profile",
@@ -39,7 +36,10 @@ dep "setup" do
     "node.managed",
     "ctags.managed",
     "z.managed",
-    "sqlite.managed"
+    "sqlite.managed",
+    "gdb.managed",
+    "scala.managed",
+    "clojure.managed"
 
   # Rubies
   requires "1.9.3.ruby",

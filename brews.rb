@@ -63,3 +63,18 @@ end
 dep "sqlite.managed" do
   provides "sqlite3"
 end
+
+dep "gdb.managed" do
+  provides "gdb"
+
+  before {
+    shell "(brew tap || grep homebrew/dupes) || brew tap homebrew/dupes"
+  }
+end
+
+dep "scala.managed" do
+end
+
+dep "clojure.managed" do
+  provides "clj"
+end

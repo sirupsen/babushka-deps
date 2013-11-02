@@ -1,32 +1,13 @@
-dep "core development" do
-  requires "git.managed", 
-    "vim.managed",
-    "the_silver_searcher.managed",
-    "tmux.managed",
-    "hub.managed"
-
-  requires "homesick",
-    "vundle install",
-    "command-t"
-end
-
-dep "homesick.gem" do
-  # Override because we want to be able to re-run on a new ruby managed by
-  # something else without installing homesick again
+dep "symlink dotfiles" do
   met? {
-    "~/.homesick".p.exists?
+    "~/.dotfiles".p.exists?
   }
-end
 
-dep "homesick" do
-  requires "homesick.gem"
-
-  met? {
-    "~/.homesick/repos/dotfiles".p.exists?
-  }
   meet {
-    shell "homesick clone Sirupsen/dotfiles --force; echo 'done'"
-    shell "homesick symlink dotfiles --force"
+    log "Cloning dotfiles.."
+    shell "git clone git@github.com:Sirupsen/dotfiles.git ~/.dotfiles"
+    log "Linking dotfiles.."
+    system("cd ~/.dotfiles && ./linker.sh")
   }
 end
 
@@ -43,6 +24,8 @@ dep "ssh" do
 end
 
 dep "vundle" do
+  requires "symlink dotfiles"
+
   met? {
     "~/.vim/bundle/vundle/README.md".p.exists?
   }

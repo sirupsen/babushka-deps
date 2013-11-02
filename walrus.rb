@@ -10,7 +10,7 @@ dep "setup" do
     "Doxie.app"
 
   # Dev
-  requires "homesick", 
+  requires "symlink dotfiles", 
     "ssh",
     "vundle",
     "code directory",

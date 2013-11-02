@@ -30,16 +30,6 @@ dep "homesick" do
   }
 end
 
-dep "bash_profile" do
-  met? {
-    "~/.bash_profile".p.exists?
-  }
-  
-  meet {
-    "~/.bash_profile".p.append(". ~/.bashrc")
-  }
-end
-
 dep "ssh" do
   requires "Dropbox.dir"
 

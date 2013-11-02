@@ -11,7 +11,6 @@ dep "setup" do
 
   # Dev
   requires "homesick", 
-    "bash_profile",
     "ssh",
     "vundle",
     "code directory",

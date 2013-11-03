@@ -23,22 +23,22 @@ dep "ssh" do
   }
 end
 
-dep "vundle" do
+dep "neobundle" do
   requires "symlink dotfiles"
 
   met? {
-    "~/.vim/bundle/vundle/README.md".p.exists?
+    "~/.vim/bundle/neobundle.vim/README.md".p.exists?
   }
 
   meet {
-    shell "rmdir ~/.vim/bundle/vundle"
-    log "Removing empty vundle directory"
+    shell "rmdir ~/.vim/bundle/neobundle.vim"
+    log "Removing empty neobundle directory"
 
     log "Cloning vundle"
-    shell "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
-    log "Vundle cloned, installing vim plugins.."
+    shell "git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim"
+    log "Neobundle cloned, installing vim plugins.."
 
-    system("vim +BundleInstall +qall")
+    system("vim +NeoBundleInstall")
   }
 end
 
@@ -83,22 +83,4 @@ end
 
 dep "Vagrant.installer" do
   source "http://files.vagrantup.com/packages/a40522f5fabccb9ddabad03d836e120ff5d14093/Vagrant-1.3.5.dmg"
-end
-
-dep "command-t" do
-  requires "vim.managed", 
-    "vundle"
-
-  def path
-    "~/.vim/bundle/Command-T/ruby/command-t"
-  end
-
-  met? {
-    (path + "/match.o").p.exists?
-  }
-
-  meet {
-    log "Compiling command-t.."
-    shell "cd #{path} && ruby extconf.rb && make clean && make"
-  }
 end

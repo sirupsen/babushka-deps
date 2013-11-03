@@ -81,3 +81,6 @@ end
 
 dep "axel.managed" do
 end
+
+dep "valgrind.managed" do
+end

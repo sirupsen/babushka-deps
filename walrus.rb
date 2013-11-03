@@ -12,11 +12,10 @@ dep "setup" do
   # Dev
   requires "symlink dotfiles", 
     "ssh",
-    "vundle",
+    "neobundle",
     "code directory",
     "Solarized.terminal",
-    "Vagrant.installer",
-    "command-t"
+    "Vagrant.installer"
 
   # Homebrew
   requires "wget.managed",
@@ -25,7 +24,6 @@ dep "setup" do
     "go.managed",
     "git.managed",
     "vim.managed",
-    "the_silver_searcher.managed",
     "tmux.managed",
     "reattach-to-user-namespace.managed",
     "hub.managed",
